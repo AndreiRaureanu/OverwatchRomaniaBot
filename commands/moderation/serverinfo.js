@@ -22,10 +22,10 @@ module.exports = class ServerinfoCommand extends Command {
         const embed = new RichEmbed()
             .setColor('#f4d942')
             .setThumbnail(serverIcon)
-            .addField('Server Name',  msg.guild.name)
-            .addField('Created On', msg.guild.createdAt)
-            .addField('Members', `Total: ${msg.guild.memberCount}\nRoles: ${rolesNr}`)
-            .addField('Channels', `Text: ${textNr}\nVoice: ${voiceNr}`)
+            .addField('❯Server Name',  msg.guild.name)
+            .addField('❯Created On', msg.guild.createdAt)
+            .addField('❯Members', `Total: ${msg.guild.memberCount}\nRoles: ${rolesNr}`)
+            .addField('❯Channels', `Text: ${textNr}\nVoice: ${voiceNr}`)
             .setFooter('E1D0nt3 ver 0.01');
         return msg.embed(embed);
     }

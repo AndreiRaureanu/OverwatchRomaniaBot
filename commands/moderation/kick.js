@@ -40,10 +40,10 @@ module.exports = class KickCommand extends Command {
             .setTitle('Moderation Action Taken')
             .setColor('#f4d942')
             .setThumbnail(userIcon)
-            .addField('Type', 'Kick')
-            .addField('User', member.user.tag)
-            .addField('Date', dateTime)
-            .addField('Reason', reason)
+            .addField('❯Type', 'Kick')
+            .addField('❯User', member.user.tag)
+            .addField('❯Date', dateTime)
+            .addField('❯Reason', reason)
             .setFooter('E1D0nt3 ver 0.01');
             //logsChannel.send(`Kicked ${member.user.tag} for reason: \`${reason}\``);
             logsChannel.send(embed);

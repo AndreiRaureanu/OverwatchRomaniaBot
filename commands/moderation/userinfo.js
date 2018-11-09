@@ -23,13 +23,13 @@ module.exports = class UserInfoCommand extends Command {
 
     run(msg, {member}) {
         const userIcon = member.user.avatarURL;
-        const roles = member.roles.array().toString();
+        // const roles = member.roles.array().toString();
         const embed = new RichEmbed()
             .setColor('#f4d942')
             .setThumbnail(userIcon)
-            .addField('Created At', member.user.createdAt)
-            .addField('Joined At', member.joinedAt)
-            .addField('Roles', roles)
+            .addField('❯Created At', member.user.createdAt)
+            .addField('❯Joined At', member.joinedAt)
+            .addField('❯Roles', `${member.roles.map(roles => `${roles.name}`).join(', ')}`)
             .setFooter('E1D0nt3 ver 0.01');
         return msg.embed(embed);
     }

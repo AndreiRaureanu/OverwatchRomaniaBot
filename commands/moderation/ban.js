@@ -40,10 +40,10 @@ module.exports = class BanCommand extends Command {
                 .setTitle('Moderation Action Taken')
                 .setColor('#f4d942')
                 .setThumbnail(userIcon)
-                .addField('Type', 'Ban')
-                .addField('User', member.user.tag)
-                .addField('Date', dateTime)
-                .addField('Reason', reason)
+                .addField('❯Type', 'Ban')
+                .addField('❯User', member.user.tag)
+                .addField('❯Date', dateTime)
+                .addField('❯Reason', reason)
                 .setFooter('E1D0nt3 ver 0.01');
             //logsChannel.send(`Banned ${member.user.tag} for reason: \`${reason}\``);
             logsChannel.send(embed);

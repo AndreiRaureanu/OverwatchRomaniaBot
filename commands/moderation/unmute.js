@@ -24,7 +24,7 @@ module.exports = class MuteCommand extends Command {
     run(msg, {member}) {
         const muteRole = msg.guild.roles.find(role => role.name === 'muted');
         console.log(muteRole instanceof Role);   
-        if(member.roles.exists('name', 'muted')) {
+        if(member.roles.exists(role => role.name === 'muted')) {
             member.removeRole(muteRole.id);
             //logsChannel.send(`Muted ${member.user.tag} for reason: \`${reason}\``);
             return msg.say(`:ok_hand: unmuted ${member.user.tag}`);

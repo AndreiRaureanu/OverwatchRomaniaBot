@@ -36,7 +36,7 @@ module.exports = class MuteCommand extends Command {
         const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
         const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         const dateTime = date + ' ' + time;
-        if(member.roles.exists('name', 'muted')) {
+        if(member.roles.exists(role => role.name === 'muted')) {
             return msg.say(':no_entry_sign: user already muted.');
         } else {
             member.addRole(muteRole.id);
@@ -44,10 +44,10 @@ module.exports = class MuteCommand extends Command {
                 .setTitle('Moderation Action Taken')
                 .setColor('#f4d942')
                 .setThumbnail(userIcon)
-                .addField('Type', 'Mute')
-                .addField('User', member.user.tag)
-                .addField('Date', dateTime)
-                .addField('Reason', reason)
+                .addField('❯Type', 'Mute')
+                .addField('❯User', member.user.tag)
+                .addField('❯Date', dateTime)
+                .addField('❯Reason', reason)
                 .setFooter('E1D0nt3 ver 0.01');
             //logsChannel.send(`Muted ${member.user.tag} for reason: \`${reason}\``);
             logsChannel.send(embed);
